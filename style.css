@@ -30,7 +30,10 @@ nav ul li a {
     position: relative;
     width: 100%;
     height: 100vh; /* Ajuste la hauteur selon ton besoin */
-    background: url('lycee.jpg') no-repeat center center/cover;
+    background: url('photo6.jpg') no-repeat center center/cover;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main-section::before {
@@ -51,6 +54,7 @@ nav ul li a {
     color: white;
     padding: 100px 20px;
     z-index: 2; /* S'assure que le texte passe devant */
+    max-width: 80%;
 }
 
 .content h1 {
