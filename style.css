@@ -29,9 +29,8 @@ nav ul li a {
 .main-section {
     position: relative;
     width: 100%;
-    height: 100vh; /* Hauteur de la section */
-    background: url('photo6.jpg') no-repeat center center/cover;
-    filter: blur(5px); /* Flou léger */
+    height: 100vh; /* Ajuste la hauteur selon ton besoin */
+    background: url('lycee.jpg') no-repeat center center/cover;
 }
 
 .main-section::before {
@@ -42,14 +41,16 @@ nav ul li a {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.4); /* Superposition sombre */
+    backdrop-filter: blur(5px); /* Flou appliqué uniquement sur le fond */
+    z-index: 1;
 }
 
 .content {
     position: relative;
     text-align: center;
     color: white;
-    padding: 100px 20px; /* Ajuste l'espace pour éviter de coller au menu */
-    z-index: 2;
+    padding: 100px 20px;
+    z-index: 2; /* S'assure que le texte passe devant */
 }
 
 .content h1 {
