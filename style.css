@@ -49,12 +49,16 @@ nav ul li a {
 }
 
 .content {
-    position: relative;
+    position: absolute;
+    top: 20px; /* Ajuste la distance entre l'entête et le texte */
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
     color: white;
-    padding: 100px 20px;
-    z-index: 2; /* S'assure que le texte passe devant */
-    max-width: 80%;
+    background: rgba(0, 0, 0, 0.5); /* Ajoute un fond semi-transparent pour améliorer la lisibilité */
+    padding: 15px 20px;
+    border-radius: 10px;
+    width: 80%; /* Ajuste la largeur du texte */
 }
 
 .content h1 {
