@@ -17,8 +17,7 @@
                  <li><a href="photos.html">Plus de Photos</a></li>
              </ul>
          </nav>
-     </header>
-    <script> 
+               <script> 
     <input 
   type="text" 
   placeholder="Rechercher un professeur..." 
@@ -34,6 +33,7 @@ const filteredProfs = professeurs.filter((prof) =>
   <ProfesseurCard key={prof.id} prof={prof} />
 ))}
     </script>
+     </header>
     <main>
         <h2>Planning des professeurs</h2>
         <table>
@@ -293,7 +293,7 @@ const filteredProfs = professeurs.filter((prof) =>
                 <td>Mme. Chabou Malika</td>
                 <td>EPS</td>
                 <td>Lundi</td>
-                </td>14:30 - 15:30</td>
+                <td>14:30 - 15:30</td>
             </tr>
             <tr>
                 <td>Mr. Berchouche Jamel</td>
