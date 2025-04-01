@@ -18,6 +18,22 @@
              </ul>
          </nav>
      </header>
+    <script> 
+    <input 
+  type="text" 
+  placeholder="Rechercher un professeur..." 
+  onChange={(e) => setSearchTerm(e.target.value)} 
+  className="border p-2 rounded-md w-full"
+/>
+const [searchTerm, setSearchTerm] = useState("");
+const filteredProfs = professeurs.filter((prof) =>
+  prof.nom.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  prof.matiere.toLowerCase().includes(searchTerm.toLowerCase())
+);
+{filteredProfs.map((prof) => (
+  <ProfesseurCard key={prof.id} prof={prof} />
+))}
+    </script>
     <main>
         <h2>Planning des professeurs</h2>
         <table>
