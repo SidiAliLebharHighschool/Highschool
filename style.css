@@ -111,3 +111,7 @@ section {
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
 }
 background-image: url('https://www.svgrepo.com/show/488200/search.svg');
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
