@@ -300,8 +300,21 @@
 
     lignes.forEach(function (ligne) {
       const texteLigne = ligne.textContent.toLowerCase();
+
+      // Affiche ou cache la ligne selon la recherche
       if (texteLigne.includes(valeur)) {
         ligne.style.display = '';
+
+        // Supprimer les anciens surlignages
+        ligne.querySelectorAll('td').forEach(function (cellule) {
+          cellule.innerHTML = cellule.textContent;
+
+          // Si une valeur est saisie, surligner la partie correspondante
+          if (valeur !== '') {
+            const regex = new RegExp(`(${valeur})`, 'gi');
+            cellule.innerHTML = cellule.textContent.replace(regex, '<span class="highlight">$1</span>');
+          }
+        });
       } else {
         ligne.style.display = 'none';
       }
