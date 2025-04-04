@@ -136,3 +136,7 @@ background-image: url('https://www.svgrepo.com/show/488200/search.svg');
 #bouton-haut:hover {
   background-color: #0056b3;
 }
+#table-profs tbody tr:hover {
+  background-color: #f0f8ff;
+  cursor: pointer;
+}
