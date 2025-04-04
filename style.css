@@ -137,6 +137,22 @@ background-image: url('https://www.svgrepo.com/show/488200/search.svg');
   background-color: #0056b3;
 }
 #table-profs tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+  transform: scale(1.01);
+  transition: all 0.2s ease-in-out;
+}
   background-color: #f0f8ff;
   cursor: pointer;
+    opacity: 0;
+  transform: translateY(20px);
+  animation: apparaitre 0.5s forwards ease-out;
+}
+
+@keyframes apparaitre {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 }
