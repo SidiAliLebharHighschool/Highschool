@@ -18,16 +18,17 @@
              </ul>
          </nav>
      </header>
-    <script src="script.js"></script>
     <main>
         <h2>Planning des professeurs</h2>
-        <table>
+        <input type="text" id="recherche-prof" placeholder="Rechercher un professeur..." style="margin-bottom: 16px; padding: 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px;">
+        <table id="table-profs">
             <tr>
                 <th>Nom & Prénom</th>
                 <th>Matière</th>
                 <th>Jour de réception</th>
                 <th>Heure</th>
             </tr>
+      <tbody>
             <tr>
                 <td>Mr. Tani Saleh</td>
                 <td>Mathématiques</td>
@@ -286,8 +287,27 @@
                 <td>Mercredi</td>
                 <td>14:30 - 15:30</td>
             </tr>
-        </table>
+          </tbody>
+
+     </table>
     </main>
+<script>
+  const input = document.getElementById('recherche-prof');
+  const lignes = document.querySelectorAll('#table-profs tbody tr');
+
+  input.addEventListener('input', function () {
+    const valeur = this.value.toLowerCase();
+
+    lignes.forEach(function (ligne) {
+      const texteLigne = ligne.textContent.toLowerCase();
+      if (texteLigne.includes(valeur)) {
+        ligne.style.display = '';
+      } else {
+        ligne.style.display = 'none';
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
