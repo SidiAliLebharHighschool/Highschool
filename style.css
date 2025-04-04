@@ -112,6 +112,7 @@ section {
 }
 background-image: url('https://www.svgrepo.com/show/488200/search.svg');
 .highlight {
-  background-color: yellow;
-  font-weight: bold;
+    background-color: yellow;
+    font-weight: bold;
+    border-radius: 3px;
 }
