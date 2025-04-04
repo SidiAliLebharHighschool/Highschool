@@ -321,6 +321,25 @@
     });
   });
 </script>
+<button id="bouton-haut" title="Remonter en haut">⬆️</button>
+<script>
+  const boutonHaut = document.getElementById("bouton-haut");
+
+  window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      boutonHaut.style.display = "block";
+    } else {
+      boutonHaut.style.display = "none";
+    }
+  };
+
+  boutonHaut.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
 
 </body>
 </html>
