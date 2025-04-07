@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Inscription Élève</title>
+</head>
+<body>
+  <h2>Inscription</h2>
+  <form id="form-inscription">
+    <input type="text" name="nom" placeholder="Nom" required><br>
+    <input type="text" name="prenom" placeholder="Prénom" required><br>
+
+    <select name="classe" required>
+      <option value="">Choisir une classe</option>
+      <option>1ST1</option><option>1ST2</option><option>1ST3</option><option>1ST4</option>
+      <option>1L1</option><option>1L2</option>
+      <option>2M</option><option>2TM</option><option>2SE</option><option>2GE</option><option>2LPH</option><option>2L</option>
+      <option>3M</option><option>3TM</option><option>3SE</option><option>3GE</option><option>3LPH</option><option>3L</option>
+    </select><br>
+
+    <input type="text" name="contact" placeholder="E-mail ou téléphone" required><br>
+
+    <button type="submit">S'inscrire</button>
+  </form>
+
+  <p id="message"></p>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+
+    const supabaseUrl = 'https://gagdsoqgfxpipyaneqrt.supabase.co'
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdhZ2Rzb3FnZnhwaXB5YW5lcXJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQwMzc5NTksImV4cCI6MjA1OTYxMzk1OX0.fNMjdUW_ft3DVr0zWTrjZetaMt2-bbcrUW3MRyr9wSY'
+    const supabase = createClient(supabaseUrl, supabaseKey)
+
+    const form = document.getElementById('form-inscription')
+    const message = document.getElementById('message')
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      const formData = new FormData(form)
+      const { nom, prenom, classe, contact } = Object.fromEntries(formData)
+
+      const { error } = await supabase.from('eleves').insert([{ nom, prenom, classe, contact }])
+      if (error) {
+        message.textContent = "Erreur : " + error.message
+      } else {
+        message.textContent = "Inscription réussie !"
+        form.reset()
+      }
+    })
+  </script>
+</body>
+</html>
