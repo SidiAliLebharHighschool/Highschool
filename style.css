@@ -49,7 +49,12 @@ th, td {
 }
 
 tr:nth-child(even) {
-background-color: #d6eeee;
+  background-color: #d6eeee;
+}
+
+/* Style spécifique pour les lignes paires en mode sombre */
+.dark-mode tr:nth-child(even) {
+  background-color: #2a2a2a; /* Gris très doux pour éviter le flashy */
 }
 
 section {
@@ -160,12 +165,18 @@ background-image: url('https://www.svgrepo.com/show/488200/search.svg');
   transform: scale(1.01);
   transition: all 0.2s ease-in-out;
 }
+#table-profs tbody tr {
   background-color: #f0f8ff;
   cursor: pointer;
-    opacity: 0;
+  opacity: 0;
   transform: translateY(20px);
   animation: apparaitre 0.5s forwards ease-out;
 }
+
+.dark-mode #table-profs tbody tr {
+  background-color: #1e1e1e;
+}
+
 
 @keyframes apparaitre {
   to {
