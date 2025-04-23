@@ -128,6 +128,25 @@ section {
   margin-bottom: 16px;
   transition: box-shadow 0.2s ease;
 }
+#horloge-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  z-index: 9999;
+}
+
+#heure {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+#date {
+  font-size: 18px;
+  margin-top: 4px;
+}
+
 
 #recherche-prof:focus {
   border-color: #007BFF;
