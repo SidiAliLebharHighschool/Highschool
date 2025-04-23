@@ -44,6 +44,31 @@
     }
   });
 </script>
+    <script>
+  function mettreAJourHorloge() {
+    const maintenant = new Date();
+
+    const heure = maintenant.getHours().toString().padStart(2, '0');
+    const minutes = maintenant.getMinutes().toString().padStart(2, '0');
+    const secondes = maintenant.getSeconds().toString().padStart(2, '0');
+
+    const jours = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const mois = ["January", "February", "March", "April", "May", "June",
+                  "July", "August", "September", "October", "November", "December"];
+
+    const jourSemaine = jours[maintenant.getDay()];
+    const jour = maintenant.getDate();
+    const moisNom = mois[maintenant.getMonth()];
+    const annee = maintenant.getFullYear();
+
+    document.getElementById('heure').textContent = `${heure}:${minutes}:${secondes}`;
+    document.getElementById('date').textContent = `${jourSemaine}, ${moisNom} ${jour}, ${annee}`;
+  }
+
+  setInterval(mettreAJourHorloge, 1000);
+  mettreAJourHorloge(); // pour ne pas attendre 1s au chargement
+</script>
+
 
 </body>
 </html>
